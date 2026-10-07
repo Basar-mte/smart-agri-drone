@@ -1,0 +1,14 @@
+# Ultralytics dataset config for the mango-leaf disease dataset.
+# `path` is resolved relative to the repository root by ml/scripts/common.py.
+path: data/mango_leaf
+train: train/images
+val: val/images
+test: test/images
+
+names:
+  0: anthracnose
+  1: bacterial_canker
+  2: cutting_weevil
+  3: die_back
+  4: gall_midge
+  5: powdery_mildew

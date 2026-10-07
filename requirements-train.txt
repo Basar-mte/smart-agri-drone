@@ -1,0 +1,7 @@
+# Training workstation (GPU recommended). Install a CUDA build of PyTorch first if you have an NVIDIA GPU.
+numpy>=1.24
+pyyaml>=6.0
+ultralytics>=8.1
+albumentations>=1.4
+opencv-python>=4.8
+folium>=0.15

@@ -1,0 +1,7 @@
+# Onboard (Raspberry Pi 5). picamera2 comes from apt: sudo apt install -y python3-picamera2
+numpy>=1.24
+pyyaml>=6.0
+ultralytics>=8.1
+pymavlink>=2.4.40
+gpiozero>=2.0
+lgpio; platform_machine == "aarch64"

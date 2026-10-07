@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smart-agri-drone"
+version = "1.0.0"
+description = "Autonomous drone that detects mango-leaf diseases with YOLOv8 and sprays only infected trees"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "Md Abul Basar Roky" },
+  { name = "Musfiqur Rahman" },
+]
+keywords = ["precision-agriculture", "drone", "yolov8", "mango", "plant-disease", "pixhawk", "raspberry-pi"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = ["numpy>=1.24", "pyyaml>=6.0"]
+
+[project.optional-dependencies]
+onboard = ["ultralytics>=8.1", "pymavlink>=2.4.40", "gpiozero>=2.0", "lgpio; platform_machine == 'aarch64'"]
+train = ["ultralytics>=8.1", "albumentations>=1.4", "opencv-python>=4.8"]
+tools = ["folium>=0.15"]
+dev = ["pytest>=7", "ruff>=0.4"]
+
+[project.scripts]
+agri-drone = "smart_agri_drone.main:main"
+agri-mission = "smart_agri_drone.mission:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["smart_agri_drone", "common"]

@@ -1,0 +1,31 @@
+# Source presentation (too large for GitHub; its media lives in assets/)
+*.pptx
+~$*
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+
+# Data, weights and run outputs
+data/*
+!data/README.md
+models/*
+!models/README.md
+runs/
+*.pt
+*_ncnn_model/
+*.onnx
+
+# OS / editors
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Smart Agri-Drone for Sustainable Farming"
+type: software
+version: 1.0.0
+date-released: 2025-10-11
+authors:
+  - family-names: Roky
+    given-names: Md Abul Basar
+    affiliation: "Department of Mechatronics Engineering, Rajshahi University of Engineering & Technology (RUET)"
+  - family-names: Rahman
+    given-names: Musfiqur
+    affiliation: "Department of Mechatronics Engineering, Rajshahi University of Engineering & Technology (RUET)"
+abstract: >-
+  An autonomous quadcopter (Pixhawk + Raspberry Pi 5) that detects six mango-leaf
+  diseases in real time with a custom YOLOv8 model, geo-tags infected trees and
+  sprays only where disease is found.
+keywords:
+  - precision agriculture
+  - UAV
+  - YOLOv8
+  - mango leaf disease
+  - targeted spraying
+license: MIT

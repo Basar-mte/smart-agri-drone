@@ -1,0 +1,39 @@
+# Smart Agri-Drone onboard configuration (Raspberry Pi 5)
+# Run with:  agri-drone --config configs/drone.yaml
+
+model:
+  weights: models/best_ncnn_model   # or models/best.pt; NCNN export is ~3x faster on a Pi 5
+  imgsz: 640
+  confidence: 0.5
+  iou: 0.45
+  device: cpu
+
+camera:
+  source: picamera2                 # "0" for a USB webcam, or a path to a video file
+  width: 1280
+  height: 720
+
+mavlink:
+  connection: /dev/ttyAMA0          # Pixhawk TELEM2 -> Pi GPIO14/15 UART; "none" for bench tests
+  baud: 57600
+
+spray:
+  relay_pin: 17                     # BCM pin driving the pump relay
+  active_high: false
+  duration_s: 2.0
+  cooldown_s: 5.0
+  min_hits: 3                       # diseased frames out of the last `window` frames
+  window: 5
+  min_separation_m: 3.0
+  require_gps_fix: true
+  target_classes:
+    - anthracnose
+    - bacterial_canker
+    - cutting_weevil
+    - die_back
+    - gall_midge
+    - powdery_mildew
+
+logging:
+  directory: runs/flights
+  save_frames: true

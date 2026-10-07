@@ -1,0 +1,17 @@
+# Bench / laptop testing: webcam input, no flight controller, no GPS requirement.
+# Run with:  agri-drone --config configs/bench.yaml --dry-run --show
+
+model:
+  weights: models/best.pt
+
+camera:
+  source: "0"
+
+mavlink:
+  connection: none
+
+spray:
+  require_gps_fix: false
+
+logging:
+  directory: runs/bench
